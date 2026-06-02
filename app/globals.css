@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 23, 42);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.8);
+}
+
+/* Base Styles */
+* {
+  @apply transition-colors duration-300;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-900 text-gray-100 font-sans;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 1) 0%,
+    rgba(20, 32, 60, 1) 50%,
+    rgba(15, 23, 42, 1) 100%
+  );
+  background-attachment: fixed;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold;
+}
+
+h1 {
+  @apply text-5xl md:text-7xl;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl;
+}
+
+h3 {
+  @apply text-3xl md:text-4xl;
+}
+
+/* Gradient Text */
+.text-gradient {
+  @apply bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent;
+}
+
+/* Glass Morphism */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+}
+
+.glass-dark {
+  @apply bg-dark-800/40 backdrop-blur-md border border-white/10 rounded-xl;
+}
+
+/* Glow Effect */
+.glow {
+  @apply shadow-lg shadow-blue-500/20;
+}
+
+.glow-lg {
+  @apply shadow-2xl shadow-blue-500/30;
+}
+
+/* Smooth Transitions */
+.transition-all-smooth {
+  @apply transition-all duration-300 ease-out;
+}
+
+/* Button Styles */
+.btn {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 ease-out cursor-pointer inline-flex items-center justify-center gap-2;
+}
+
+.btn-primary {
+  @apply btn bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105;
+}
+
+.btn-secondary {
+  @apply btn glass text-white hover:bg-white/20;
+}
+
+.btn-outline {
+  @apply btn border-2 border-blue-400 text-blue-400 hover:bg-blue-400/10;
+}
+
+/* Link Styles */
+a {
+  @apply transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-blue-400;
+}
+
+/* Container Utilities */
+.container-fluid {
+  @apply w-full px-4 sm:px-6 lg:px-8;
+}
+
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Section Spacing */
+.section {
+  @apply py-20 md:py-32 lg:py-40;
+}
+
+.section-lg {
+  @apply py-32 md:py-48 lg:py-64;
+}
+
+/* Grid Utilities */
+.grid-cols-auto {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.grid-cols-auto-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
